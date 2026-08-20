@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Support | خدمات رقمية موثوقة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161d29;
+    --bg-soft:#1b2432;
+    --card:#1e2836;
+    --card-hover:#242f3f;
+    --line:#313e50;
+    --text:#e6ebf1;
+    --text-dim:#9aa7b8;
+    --gold:#d9a15f;
+    --teal:#5cb8a4;
+    --teal-dark:#3d8f7d;
+    --danger:#e08585;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(circle at 85% -10%, rgba(217,161,95,0.06), transparent 45%),
+      radial-gradient(circle at -10% 30%, rgba(92,184,164,0.06), transparent 40%),
+      var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans Arabic','Tajawal',sans-serif;
+    line-height:1.7;
+    min-height:100vh;
+  }
+  h1,h2,h3,.brand,.eyebrow,.badge,.stat-num{font-family:'Tajawal',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+
+  /* ---------- seal / verified motif (signature element) ---------- */
+  .seal{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:1em;height:1em;
+  }
+  .seal svg{width:100%;height:100%;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(12,20,32,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    max-width:1180px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;letter-spacing:.2px;}
+  .brand .seal{width:30px;height:30px;color:var(--gold);}
+  .brand small{display:block;color:var(--text-dim);font-weight:400;font-size:.7rem;font-family:'IBM Plex Sans Arabic',sans-serif;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;color:var(--text-dim);}
+  .nav-links a:hover{color:var(--gold);}
+  .header-actions{display:flex;gap:10px;}
+  @media(max-width:760px){.nav-links{display:none;}}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:999px;
+    font-size:.88rem;font-weight:600;
+    border:1px solid transparent;
+    cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-wa{
+    background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+    color:#04140f;
+    box-shadow:0 4px 18px rgba(92,184,164,0.18);
+  }
+  .btn-wa:hover{box-shadow:0 6px 24px rgba(92,184,164,0.28);}
+  .btn-call{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--line);
+  }
+  .btn-call:hover{border-color:var(--gold);color:var(--gold);}
+  .btn-ghost{background:var(--card);border:1px solid var(--line);color:var(--text-dim);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:1180px;margin:0 auto;
+    padding:70px 20px 50px;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;
+  }
+  @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:44px;}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--gold);font-size:.8rem;font-weight:700;
+    letter-spacing:.5px;
+    border:1px solid rgba(217,161,95,0.3);
+    background:rgba(217,161,95,0.07);
+    padding:6px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4.2vw,3.1rem);
+    font-weight:900;line-height:1.25;
+    margin-bottom:18px;
+  }
+  .hero h1 span{color:var(--teal);}
+  .hero p{color:var(--text-dim);font-size:1.05rem;max-width:52ch;margin-bottom:30px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px;}
+  .btn-lg{padding:14px 26px;font-size:.98rem;}
+  .stats{display:flex;gap:28px;flex-wrap:wrap;}
+  .stat-num{font-size:1.6rem;font-weight:900;color:var(--gold);}
+  .stat-label{font-size:.78rem;color:var(--text-dim);}
+
+  .hero-visual{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:34px 26px;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+  }
+  .hero-visual .row{
+    display:flex;align-items:center;gap:12px;
+    padding:12px 0;border-bottom:1px solid var(--line);
+  }
+  .hero-visual .row:last-child{border-bottom:none;}
+  .hero-visual .row .seal{width:22px;height:22px;color:var(--teal);flex:none;}
+  .hero-visual .row span{font-size:.92rem;color:var(--text);}
+  .hero-visual .row small{display:block;color:var(--text-dim);font-size:.76rem;margin-top:2px;}
+
+  /* ---------- search ---------- */
+  .search-section{max-width:1180px;margin:0 auto;padding:0 20px 10px;}
+  .search-box{
+    display:flex;align-items:center;gap:10px;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:12px 18px;
+    max-width:520px;
+  }
+  .search-box input{
+    background:transparent;border:none;outline:none;
+    color:var(--text);font-family:inherit;font-size:.95rem;width:100%;
+  }
+  .search-box input::placeholder{color:var(--text-dim);}
+  .search-box svg{width:18px;height:18px;color:var(--text-dim);flex:none;}
+  .no-results{display:none;color:var(--text-dim);text-align:center;padding:40px 0;}
+
+  /* ---------- services ---------- */
+  .services{max-width:1180px;margin:0 auto;padding:36px 20px 80px;}
+  .section-head{margin-bottom:26px;}
+  .section-head h2{font-size:1.6rem;font-weight:800;}
+  .section-head p{color:var(--text-dim);font-size:.92rem;margin-top:6px;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+    gap:18px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    display:flex;flex-direction:column;gap:14px;
+    transition:border-color .2s ease, transform .2s ease, background .2s ease;
+  }
+  .card:hover{border-color:rgba(217,161,95,0.35);transform:translateY(-3px);background:var(--card-hover);}
+  .card-top{display:flex;align-items:flex-start;gap:12px;}
+  .icon-wrap{
+    flex:none;width:44px;height:44px;border-radius:12px;
+    background:rgba(92,184,164,0.14);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--teal);
+  }
+  .icon-wrap svg{width:22px;height:22px;stroke:currentColor;fill:none;}
+  .card-top .num{
+    font-size:.72rem;color:var(--text-dim);font-weight:700;
+    letter-spacing:.5px;
+  }
+  .card h3{font-size:1.03rem;font-weight:700;margin-bottom:2px;}
+  .card p{color:var(--text-dim);font-size:.87rem;flex:1;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    font-size:.7rem;color:var(--gold);
+    background:rgba(217,161,95,0.07);
+    border:1px solid rgba(217,161,95,0.22);
+    padding:3px 9px;border-radius:999px;
+  }
+  .card-actions{display:flex;gap:8px;margin-top:auto;}
+  .card-actions .btn{flex:1;justify-content:center;padding:9px 12px;font-size:.82rem;}
+
+  /* ---------- contact / footer ---------- */
+  .contact{
+    max-width:1180px;margin:0 auto;padding:20px 20px 70px;
+  }
+  .contact-panel{
+    background:linear-gradient(135deg, rgba(92,184,164,0.08), rgba(217,161,95,0.05));
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:44px 34px;
+    text-align:center;
+  }
+  .contact-panel h2{font-size:1.7rem;font-weight:900;margin-bottom:10px;}
+  .contact-panel p{color:var(--text-dim);margin-bottom:26px;}
+  .contact-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 20px;text-align:center;
+    color:var(--text-dim);font-size:.82rem;
+  }
+
+  /* floating whatsapp */
+  .float-wa{
+    position:fixed;bottom:22px;left:22px;z-index:60;
+    width:58px;height:58px;border-radius:50%;
+    background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 26px rgba(92,184,164,0.3);
+    animation:pulse 2.4s infinite;
+  }
+  .float-wa svg{width:28px;height:28px;color:#04140f;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(92,184,164,0.3);}
+    70%{box-shadow:0 0 0 14px rgba(92,184,164,0);}
+    100%{box-shadow:0 0 0 0 rgba(92,184,164,0);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">
+      <span class="seal">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 1.5L17.5 3l1 2.7L21 7l-1 2.8.7 2.9-2.3 1.9.2 3-2.9.6-1.6 2.5L12 20l-3.1.7-1.6-2.5-2.9-.6.2-3L2.3 12.7 3 9.9 2 7l2.5-1.3L5.5 3l2.9.5L11 2z" fill="currentColor" opacity="0.18"/><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>Digital Support<small>خدمات رقمية موثقة وسريعة</small></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">الخدمات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-call" href="tel:+201033592674">📞 اتصال</a>
+      <a class="btn btn-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85">واتساب</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow"><span class="seal" style="width:14px;height:14px;"><svg viewBox="0 0 24 24" fill="none"><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> جهة موثقة لخدمات الحسابات والإعلانات</span>
+    <h1>كل خدماتك الرقمية <span>في مكان واحد</span>، وموثقة من البداية</h1>
+    <p>توثيق منصات، بيزنس مانجر، حسابات إعلانية، اشتراكات، واسترجاع حسابات معطلة — بدون ما تدور بين أكتر من جهة. اختار اللي محتاجه وابعته لنا مباشرة.</p>
+    <div class="hero-actions">
+      <a class="btn btn-wa btn-lg" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85">
+        احجز عبر واتساب
+      </a>
+      <a class="btn btn-call btn-lg" href="tel:+201033592674">اتصل الآن — 201033592674+</a>
+    </div>
+    <div class="stats">
+      <div><div class="stat-num">24/7</div><div class="stat-label">رد سريع واتساب</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">تعامل موثق</div></div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="row"><span class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><span>توثيق فيسبوك / انستجرام / واتساب بزنس</span><small>3 منصات بشهادة موثوقية</small></div></div>
+    <div class="row"><span class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><span>بيزنس مانجر شركات + واتساب API</span><small>حتى 2000 رسالة يوميًا</small></div></div>
+    <div class="row"><span class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><span>حسابات إعلانية بحد صرف عالي</span><small>يومي 250$ أو صرف مفتوح</small></div></div>
+    <div class="row"><span class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><span>استرجاع حسابات معطلة أو مقفولة</span><small>بيزنس مانجر وحسابات إعلانية</small></div></div>
+  </div>
+</section>
+
+<div class="search-section">
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <input id="searchInput" type="text" placeholder="دور على خدمة... مثال: بيزنس مانجر، تيك توك، حسابات إعلانية">
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="section-head">
+    <h2>كل الخدمات</h2>
+    <p>اضغط "اطلب الخدمة" وهيتفتح واتساب برسالة جاهزة باسم الخدمة، أو اتصل بينا مباشرة.</p>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="no-results" id="noResults">مفيش نتائج مطابقة، جرب كلمة تانية.</div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-panel">
+    <h2>محتاج استشارة قبل ما تطلب؟</h2>
+    <p>ابعتلنا اسم الخدمة اللي محتاجها أو استفسارك وهنرد عليك بسرعة.</p>
+    <div class="contact-actions">
+      <a class="btn btn-wa btn-lg" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85">راسلنا واتساب</a>
+      <a class="btn btn-call btn-lg" href="tel:+201033592674">اتصل: 201033592674+</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Digital Support © 2026 — كل الخدمات موضحة لأغراض تعريفية فقط، تواصل معنا لتفاصيل كل خدمة وأسعارها.
+</footer>
+
+<a class="float-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1" aria-label="تواصل واتساب">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.6.8 5 2.1 7L3 29l6.7-2.5c1.9 1 4.1 1.6 6.3 1.6 6.9 0 12.5-5.6 12.5-12.6C28.5 8.6 22.9 3 16 3zm0 22.9c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1.5 1.1-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8 0-5.9 4.8-10.7 10.8-10.7 5.9 0 10.7 4.8 10.7 10.7S21.9 25.9 16 25.9zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+const ICONS = {
+  shieldCheck: `<svg viewBox="0 0 24 24"><path stroke-width="1.6" stroke-linejoin="round" d="M12 3l7 3v5c0 4.6-2.9 8.2-7 9.5-4.1-1.3-7-4.9-7-9.5V6l7-3z"/><path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4.2"/></svg>`,
+  briefcase: `<svg viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12" rx="2" stroke-width="1.6"/><path stroke-width="1.6" d="M8.5 7.5V6a2 2 0 012-2h3a2 2 0 012 2v1.5"/><path stroke-width="1.6" d="M3 12.5h18"/></svg>`,
+  play: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-width="1.6"/><path stroke-width="1.6" stroke-linejoin="round" d="M10 9l5 3-5 3V9z"/></svg>`,
+  userCheck: `<svg viewBox="0 0 24 24"><circle cx="10" cy="8.5" r="3.3" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" d="M4.5 19c.6-3.3 3-5 5.5-5s3.6.9 4.5 2.2"/><path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M16 13.5l1.8 1.8L21 12"/></svg>`,
+  megaphone: `<svg viewBox="0 0 24 24"><path stroke-width="1.6" stroke-linejoin="round" d="M3 10v4a1 1 0 001 1h2l4.5 3.3a.6.6 0 001-.5V6.2a.6.6 0 00-1-.5L6 9H4a1 1 0 00-1 1z"/><path stroke-width="1.6" stroke-linecap="round" d="M15.5 8.5a5 5 0 010 7M18.3 6a8.5 8.5 0 010 12"/></svg>`,
+  chartUp: `<svg viewBox="0 0 24 24"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 19V10M9.5 19V6M15 19v-7M20 19V4"/></svg>`,
+  building: `<svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1.2" stroke-width="1.6"/><path stroke-width="1.5" stroke-linecap="round" d="M8.5 7.5h1M14.5 7.5h1M8.5 11h1M14.5 11h1M8.5 14.5h1M14.5 14.5h1"/><path stroke-width="1.6" d="M10 20.5v-3.7h4v3.7"/></svg>`,
+  calendarClock: `<svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" d="M8 3v3M16 3v3M3.5 9.5h17"/><circle cx="12.2" cy="15" r="3.1" stroke-width="1.5"/><path stroke-width="1.4" stroke-linecap="round" d="M12.2 13.5v1.6l1.1.9"/></svg>`,
+  target: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.6"/><circle cx="12" cy="12" r="4.4" stroke-width="1.6"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>`,
+  database: `<svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="2.8" stroke-width="1.6"/><path stroke-width="1.6" d="M4.5 6v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6"/><path stroke-width="1.6" d="M4.5 12v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-6"/></svg>`,
+  key: `<svg viewBox="0 0 24 24"><circle cx="7.5" cy="14.5" r="3.5" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M10.2 12l8.3-8.3M15.5 6.7l2.3 2.3M18.5 3.7l2.3 2.3"/></svg>`,
+  thumbUp: `<svg viewBox="0 0 24 24"><path stroke-width="1.6" stroke-linejoin="round" d="M7 20V10.5L11.3 4c1 0 1.8.9 1.6 1.9l-.7 3.6h5.4a2 2 0 012 2.4l-1.4 6.3a2 2 0 01-2 1.6H9.5A2.5 2.5 0 017 17.5"/><path stroke-width="1.6" d="M7 10.5H4.5v9.5H7"/></svg>`,
+  unlock: `<svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9.5" rx="2" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" d="M8 11V7.5a4 4 0 017.3-2.3"/><circle cx="12" cy="15.5" r="1.3" fill="currentColor" stroke="none"/></svg>`,
+  camera: `<svg viewBox="0 0 24 24"><path stroke-width="1.6" stroke-linejoin="round" d="M4 8.5A1.5 1.5 0 015.5 7h2l1-1.7h7l1 1.7h2A1.5 1.5 0 0120 8.5v9A1.5 1.5 0 0118.5 19h-13A1.5 1.5 0 014 17.5v-9z"/><circle cx="12" cy="12.7" r="3.3" stroke-width="1.6"/></svg>`,
+};
+
+const services = [
+  {icon:ICONS.shieldCheck, tag:"توثيق", title:"توثيق 3 منصات", desc:"توثيق بيدج فيسبوك، حساب انستجرام، وواتساب بزنس رسمي وموثق.", tags:["فيسبوك","انستجرام","واتساب بزنس"]},
+  {icon:ICONS.briefcase, tag:"بيزنس مانجر", title:"بيزنس مانجر شركات موثق شرعي", desc:"بيزنس مانجر شرعي موثق باسم شركة، جاهز واتساب API لحد 2000 رسالة يوميًا ومعتمد Tech Provider. متاح كمان توثيق بيزنس ببيانات شركة العميل نفسها.", tags:["Business Manager","WhatsApp API","توثيق شركات"]},
+  {icon:ICONS.play, tag:"تيك توك", title:"بيزنس أجينسي تيك توك موثق", desc:"حساب أجينسي تيك توك بيزنس شرعي وموثق، متاح استهداف كل الدول للحملات الإعلانية.", tags:["TikTok Business","استهداف عالمي"]},
+  {icon:ICONS.userCheck, tag:"حسابات فيسبوك", title:"حسابات فيسبوك قديمة راجعة القيد", desc:"حسابات قديمة تم رفع القيد عنها، مربوطة ببريد إلكتروني وهوية ومفعّل عليها المصادقة الثنائية.", tags:["راجع قيد","بريد + هوية","مصادقة"]},
+  {icon:ICONS.megaphone, tag:"حسابات فيسبوك", title:"حسابات فيسبوك موثقة لإعلانات السياسة والمجتمع", desc:"حسابات موثقة مؤهلة لتشغيل إعلانات فئة السياسة والقضايا الاجتماعية، مزودة ببريد وهوية ومصادقة.", tags:["Political Ads","بريد + هوية","مصادقة"]},
+  {icon:ICONS.chartUp, tag:"حسابات إعلانية", title:"حسابات إعلانية بحد صرف عالي (Limit)", desc:"حسابات إعلانية بحد صرف يومي 250 دولار، أو حسابات بصرف يومي مفتوح حسب احتياجك.", tags:["250$ يوميًا","صرف مفتوح"]},
+  {icon:ICONS.building, tag:"بيزنس مانجر", title:"بيزنس مانجر قديم راجع القيد", desc:"بيزنس مانجر قديم تم رفع القيد عنه، مستقر ويتحمل شغل واستهلاك لسنين طويلة.", tags:["راجع قيد","استقرار طويل"]},
+  {icon:ICONS.calendarClock, tag:"صفحات", title:"صفحات فيسبوك قديمة من 2020", desc:"صفحات فيسبوك ذات تاريخ إنشاء قديم يعود لعام 2020، مناسبة لبناء ثقة أسرع.", tags:["تاريخ 2020","صفحات أصلية"]},
+  {icon:ICONS.target, tag:"استهداف", title:"إعادة استهداف مراسلين الصفحة", desc:"استهداف الأشخاص اللي راسلوا صفحتك على فيسبوك أو انستجرام قبل كده بحملات إعادة تسويق.", tags:["Retargeting","فيسبوك","انستجرام"]},
+  {icon:ICONS.database, tag:"بيانات", title:"سحب داتا وأعضاء", desc:"سحب داتا أي بوست أو أعضاء جروبات فيسبوك، وكمان سحب داتا متابعين انستجرام.", tags:["داتا بوستات","أعضاء جروبات","متابعين انستجرام"]},
+  {icon:ICONS.key, tag:"اشتراكات", title:"اشتراكات رقمية (Gemini / Canva / ChatGPT)", desc:"اشتراك جيميناي برو لمدة 18 شهر، اشتراك كانفا برو لمدة 3 سنين، واشتراك شات جي بي تي.", tags:["Gemini Pro","Canva Pro","ChatGPT"]},
+  {icon:ICONS.thumbUp, tag:"تفاعل", title:"تزويد متابعين وتفاعل", desc:"تزويد متابعين فيسبوك وانستجرام، بالإضافة لعمل رياكشنز وتعليقات على منشوراتك.", tags:["متابعين فيسبوك","متابعين انستجرام","رياكشن وتعليقات"]},
+  {icon:ICONS.unlock, tag:"استرجاع", title:"استرجاع حسابات إعلانية وبيزنس مانجر", desc:"استرجاع الحسابات الإعلانية والبيزنس مانجر المعطلة أو المقيدة أو المقفولة بسبب مشاكل الدفعات.", tags:["حسابات معطلة","بيزنس مانجر مقفول","مشاكل دفع"]},
+  {icon:ICONS.camera, tag:"فتح حسابات", title:"فتح حسابات فيسبوك وانستجرام", desc:"فتح حسابات فيسبوك أو انستجرام المطلوب منها تأكيد بالسيلفي أو الفيديو.", tags:["طلب سيلفي","طلب فيديو"]},
+];
+
+const grid = document.getElementById('grid');
+const noResults = document.getElementById('noResults');
+
+function waLink(title){
+  const text = encodeURIComponent(`اهلاً، عايز أستفسر/أطلب خدمة: ${title}`);
+  return `https://wa.me/201033592674?text=${text}`;
+}
+
+function render(list){
+  grid.innerHTML = '';
+  list.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.search = (s.title + ' ' + s.desc + ' ' + s.tag + ' ' + s.tags.join(' ')).toLowerCase();
+    card.innerHTML = `
+      <div class="card-top">
+        <div class="icon-wrap">${s.icon}</div>
+        <div class="num">${s.tag}</div>
+      </div>
+      <div>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+      </div>
+      <div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div class="card-actions">
+        <a class="btn btn-wa" target="_blank" href="${waLink(s.title)}">طلب الخدمة</a>
+        <a class="btn btn-call" href="tel:+201033592674">اتصال</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+render(services);
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  const filtered = services.filter(s =>
+    (s.title + ' ' + s.desc + ' ' + s.tag + ' ' + s.tags.join(' ')).toLowerCase().includes(q)
+  );
+  render(filtered);
+  noResults.style.display = filtered.length ? 'none' : 'block';
+});
+</script>
+
+</body>
+</html>
