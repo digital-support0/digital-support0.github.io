@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Support | خدمات رقمية موثوقة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700;800;900&family=Almarai:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#161d29;
@@ -25,15 +25,18 @@
   html{scroll-behavior:smooth;}
   body{
     background:
-      radial-gradient(circle at 85% -10%, rgba(217,161,95,0.06), transparent 45%),
-      radial-gradient(circle at -10% 30%, rgba(92,184,164,0.06), transparent 40%),
+      radial-gradient(circle at 85% -10%, rgba(217,161,95,0.07), transparent 45%),
+      radial-gradient(circle at -10% 30%, rgba(92,184,164,0.07), transparent 40%),
+      radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
       var(--bg);
+    background-size:auto, auto, 22px 22px, auto;
     color:var(--text);
-    font-family:'IBM Plex Sans Arabic','Tajawal',sans-serif;
-    line-height:1.7;
+    font-family:'Almarai',sans-serif;
+    font-size:17px;
+    line-height:1.85;
     min-height:100vh;
   }
-  h1,h2,h3,.brand,.eyebrow,.badge,.stat-num{font-family:'Tajawal',sans-serif;}
+  h1,h2,h3,.brand,.eyebrow,.badge,.stat-num{font-family:'El Messiri',serif;}
   a{color:inherit;text-decoration:none;}
   img,svg{display:block;}
 
@@ -55,18 +58,20 @@
     max-width:1180px;margin:0 auto;padding:14px 20px;
     display:flex;align-items:center;justify-content:space-between;gap:16px;
   }
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;letter-spacing:.2px;}
-  .brand .seal{width:30px;height:30px;color:var(--gold);}
-  .brand small{display:block;color:var(--text-dim);font-weight:400;font-size:.7rem;font-family:'IBM Plex Sans Arabic',sans-serif;}
-  .nav-links{display:flex;gap:22px;font-size:.92rem;color:var(--text-dim);}
+  .logo-mark{display:flex;align-items:center;justify-content:center;flex:none;filter:drop-shadow(0 3px 8px rgba(217,161,95,0.25));}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.35rem;letter-spacing:.2px;}
+  .brand .seal{width:32px;height:32px;color:var(--gold);}
+  .brand span:not(.seal){background:linear-gradient(90deg,var(--text) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .brand small{display:block;color:var(--text-dim);font-weight:400;font-size:.74rem;font-family:'Almarai',sans-serif;-webkit-text-fill-color:var(--text-dim);letter-spacing:0;}
+  .nav-links{display:flex;gap:22px;font-size:.95rem;color:var(--text-dim);font-family:'Almarai',sans-serif;font-weight:700;}
   .nav-links a:hover{color:var(--gold);}
   .header-actions{display:flex;gap:10px;}
   @media(max-width:760px){.nav-links{display:none;}}
 
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    padding:10px 18px;border-radius:999px;
-    font-size:.88rem;font-weight:600;
+    padding:11px 20px;border-radius:10px;
+    font-size:.9rem;font-weight:700;font-family:'Almarai',sans-serif;
     border:1px solid transparent;
     cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
     white-space:nowrap;
@@ -102,17 +107,17 @@
     padding:6px 14px;border-radius:999px;margin-bottom:20px;
   }
   .hero h1{
-    font-size:clamp(2rem,4.2vw,3.1rem);
-    font-weight:900;line-height:1.25;
-    margin-bottom:18px;
+    font-size:clamp(2.3rem,4.8vw,3.6rem);
+    font-weight:800;line-height:1.28;
+    margin-bottom:20px;
   }
   .hero h1 span{color:var(--teal);}
-  .hero p{color:var(--text-dim);font-size:1.05rem;max-width:52ch;margin-bottom:30px;}
+  .hero p{color:var(--text-dim);font-size:1.12rem;max-width:52ch;margin-bottom:30px;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px;}
-  .btn-lg{padding:14px 26px;font-size:.98rem;}
+  .btn-lg{padding:15px 28px;font-size:1.02rem;}
   .stats{display:flex;gap:28px;flex-wrap:wrap;}
-  .stat-num{font-size:1.6rem;font-weight:900;color:var(--gold);}
-  .stat-label{font-size:.78rem;color:var(--text-dim);}
+  .stat-num{font-size:1.8rem;font-weight:800;color:var(--gold);}
+  .stat-label{font-size:.82rem;color:var(--text-dim);font-family:'Almarai',sans-serif;}
 
   .hero-visual{
     position:relative;
@@ -149,9 +154,9 @@
 
   /* ---------- services ---------- */
   .services{max-width:1180px;margin:0 auto;padding:36px 20px 80px;}
-  .section-head{margin-bottom:26px;}
-  .section-head h2{font-size:1.6rem;font-weight:800;}
-  .section-head p{color:var(--text-dim);font-size:.92rem;margin-top:6px;}
+  .section-head{margin-bottom:30px;padding-right:16px;border-right:3px solid var(--gold);}
+  .section-head h2{font-size:1.9rem;font-weight:700;}
+  .section-head p{color:var(--text-dim);font-size:.96rem;margin-top:8px;font-family:'Almarai',sans-serif;}
 
   .grid{
     display:grid;
@@ -159,13 +164,20 @@
     gap:18px;
   }
   .card{
+    position:relative;overflow:hidden;
     background:var(--card);
     border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:22px;
+    border-radius:20px 20px 20px 6px;
+    padding:24px 22px 22px;
     display:flex;flex-direction:column;gap:14px;
     transition:border-color .2s ease, transform .2s ease, background .2s ease;
   }
+  .card::before{
+    content:'';position:absolute;top:0;right:0;left:0;height:3px;
+    background:var(--teal);
+  }
+  .card:nth-child(3n+2)::before{background:var(--gold);}
+  .card:nth-child(3n)::before{background:var(--teal-dark);}
   .card:hover{border-color:rgba(217,161,95,0.35);transform:translateY(-3px);background:var(--card-hover);}
   .card-top{display:flex;align-items:flex-start;gap:12px;}
   .icon-wrap{
@@ -175,18 +187,35 @@
     color:var(--teal);
   }
   .icon-wrap svg{width:22px;height:22px;stroke:currentColor;fill:none;}
+  .card-top-meta{display:flex;flex-direction:column;gap:5px;}
   .card-top .num{
     font-size:.72rem;color:var(--text-dim);font-weight:700;
     letter-spacing:.5px;
   }
-  .card h3{font-size:1.03rem;font-weight:700;margin-bottom:2px;}
-  .card p{color:var(--text-dim);font-size:.87rem;flex:1;}
+  .en-label{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:.68rem;font-weight:700;color:var(--teal);
+    letter-spacing:.4px;
+    background:rgba(92,184,164,0.1);
+    border:1px solid rgba(92,184,164,0.28);
+    padding:2px 9px;border-radius:999px;
+    width:fit-content;
+  }
+  .en-label::before{content:"EN";font-size:.58rem;opacity:.6;letter-spacing:0;}
+  .card h3{font-size:1.12rem;font-weight:700;margin-bottom:2px;font-family:'El Messiri',serif;}
+  .card p{color:var(--text-dim);font-size:.92rem;flex:1;font-family:'Almarai',sans-serif;}
   .tags{display:flex;flex-wrap:wrap;gap:6px;}
   .tag{
     font-size:.7rem;color:var(--gold);
     background:rgba(217,161,95,0.07);
     border:1px solid rgba(217,161,95,0.22);
     padding:3px 9px;border-radius:999px;
+  }
+  .tag-en{
+    color:var(--teal);
+    background:rgba(92,184,164,0.08);
+    border:1px solid rgba(92,184,164,0.24);
+    font-family:'Almarai',sans-serif;
   }
   .card-actions{display:flex;gap:8px;margin-top:auto;}
   .card-actions .btn{flex:1;justify-content:center;padding:9px 12px;font-size:.82rem;}
@@ -213,6 +242,71 @@
   }
 
   /* floating whatsapp */
+  /* ---------- payment ---------- */
+  .payment{max-width:1180px;margin:0 auto;padding:10px 20px 70px;}
+  .pay-tabs{
+    display:flex;gap:8px;margin-bottom:22px;
+    background:var(--bg-soft);border:1px solid var(--line);
+    border-radius:14px;padding:6px;width:fit-content;
+  }
+  .pay-tab{
+    border:none;background:transparent;color:var(--text-dim);
+    font-family:inherit;font-weight:700;font-size:.88rem;
+    padding:10px 20px;border-radius:10px;cursor:pointer;
+    transition:background .15s ease, color .15s ease;
+  }
+  .pay-tab.active{background:var(--card);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+  .pay-panel{display:none;}
+  .pay-panel.active{display:block;}
+  .pay-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:16px;
+  }
+  .pay-card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:20px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .pay-card-head{display:flex;align-items:center;gap:12px;}
+  .pay-card-head h3{font-size:1rem;font-weight:700;}
+  .pay-card-head small{color:var(--text-dim);font-size:.78rem;}
+  .pay-value{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:var(--bg-soft);border:1px dashed var(--line);
+    border-radius:10px;padding:10px 14px;
+    font-weight:600;font-size:.95rem;
+  }
+  .pay-value-long{align-items:flex-start;flex-direction:column;gap:8px;}
+  .pay-value .addr{font-size:.8rem;word-break:break-all;color:var(--text);}
+  .copy-btn{
+    flex:none;border:1px solid var(--line);background:var(--card);
+    color:var(--teal);font-family:inherit;font-weight:700;font-size:.76rem;
+    padding:6px 12px;border-radius:8px;cursor:pointer;
+    transition:background .15s ease;
+  }
+  .copy-btn:hover{background:var(--card-hover);}
+  .pay-value-long .copy-btn{align-self:flex-end;}
+  .pay-warn{
+    margin-top:16px;color:var(--gold);font-size:.85rem;
+    background:rgba(217,161,95,0.08);border:1px solid rgba(217,161,95,0.22);
+    padding:12px 16px;border-radius:12px;
+  }
+  .pay-steps{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;margin-top:26px;
+  }
+  .pay-step{
+    background:var(--bg-soft);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;
+    font-size:.85rem;color:var(--text-dim);
+    display:flex;align-items:center;gap:10px;
+  }
+  .pay-step span{
+    flex:none;width:24px;height:24px;border-radius:50%;
+    background:var(--teal);color:#fff;font-weight:700;font-size:.78rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+
   .float-wa{
     position:fixed;bottom:22px;left:22px;z-index:60;
     width:58px;height:58px;border-radius:50%;
@@ -234,13 +328,23 @@
 <header>
   <div class="nav-wrap">
     <div class="brand">
-      <span class="seal">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 1.5L17.5 3l1 2.7L21 7l-1 2.8.7 2.9-2.3 1.9.2 3-2.9.6-1.6 2.5L12 20l-3.1.7-1.6-2.5-2.9-.6.2-3L2.3 12.7 3 9.9 2 7l2.5-1.3L5.5 3l2.9.5L11 2z" fill="currentColor" opacity="0.18"/><path d="M8.2 12.4l2.4 2.4 5.2-5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <defs>
+            <linearGradient id="dsGrad" x1="0" y1="0" x2="40" y2="40">
+              <stop offset="0" stop-color="var(--teal)"/>
+              <stop offset="1" stop-color="var(--gold)"/>
+            </linearGradient>
+          </defs>
+          <rect width="40" height="40" rx="11" fill="url(#dsGrad)"/>
+          <text x="20" y="27" text-anchor="middle" font-family="'El Messiri',serif" font-weight="800" font-size="17" fill="#101820">DS</text>
+        </svg>
       </span>
       <span>Digital Support<small>خدمات رقمية موثقة وسريعة</small></span>
     </div>
     <nav class="nav-links">
       <a href="#services">الخدمات</a>
+      <a href="#payment">طرق الدفع</a>
       <a href="#contact">تواصل معنا</a>
     </nav>
     <div class="header-actions">
@@ -292,6 +396,96 @@
   <div class="no-results" id="noResults">مفيش نتائج مطابقة، جرب كلمة تانية.</div>
 </section>
 
+<section class="payment" id="payment">
+  <div class="section-head">
+    <h2>طرق الدفع</h2>
+    <p>حوّل المبلغ المتفق عليه بأي وسيلة من دول، وابعت إثبات التحويل على واتساب مع اسم الخدمة — وهننفذلك فورًا.</p>
+  </div>
+
+  <div class="pay-tabs">
+    <button class="pay-tab active" data-target="pay-egypt" type="button">🇪🇬 داخل مصر</button>
+    <button class="pay-tab" data-target="pay-intl" type="button">🌍 خارج مصر</button>
+  </div>
+
+  <div class="pay-panels">
+    <div class="pay-panel active" id="pay-egypt">
+      <div class="pay-grid">
+        <div class="pay-card">
+          <div class="pay-card-head">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.2" stroke-width="1.6"/><path stroke-width="1.6" d="M3.5 9.5h17"/><circle cx="7.5" cy="14.3" r="1" fill="currentColor" stroke="none"/></svg></div>
+            <div><h3>فودافون كاش</h3><small>تحويل مباشر على الرقم</small></div>
+          </div>
+          <div class="pay-value">
+            <span dir="ltr">+20 103 359 2674</span>
+            <button class="copy-btn" data-copy="+201033592674" type="button">نسخ</button>
+          </div>
+          <a class="btn btn-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%AD%D9%88%D9%84%D8%AA%20%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA%20%D8%B9%D9%86%20%D8%B7%D8%B1%D9%8A%D9%82%20%D9%81%D9%88%D8%AF%D8%A7%D9%81%D9%88%D9%86%20%D9%83%D8%A7%D8%B4%D8%8C%20%D9%88%D8%AF%D9%87%20%D8%A5%D8%AB%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D9%88%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%3A%20">أرسل إثبات الدفع واتساب</a>
+        </div>
+
+        <div class="pay-card">
+          <div class="pay-card-head">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.2" stroke-width="1.6"/><path stroke-width="1.6" d="M3.5 9.5h17"/><circle cx="7.5" cy="14.3" r="1" fill="currentColor" stroke="none"/></svg></div>
+            <div><h3>InstaPay</h3><small>تحويل على نفس الرقم</small></div>
+          </div>
+          <div class="pay-value">
+            <span dir="ltr">+20 103 359 2674</span>
+            <button class="copy-btn" data-copy="+201033592674" type="button">نسخ</button>
+          </div>
+          <a class="btn btn-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%AD%D9%88%D9%84%D8%AA%20%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA%20%D8%B9%D9%86%20%D8%B7%D8%B1%D9%8A%D9%82%20InstaPay%D8%8C%20%D9%88%D8%AF%D9%87%20%D8%A5%D8%AB%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D9%88%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%3A%20">أرسل إثبات الدفع واتساب</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pay-panel" id="pay-intl">
+      <div class="pay-grid">
+        <div class="pay-card">
+          <div class="pay-card-head">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" d="M8.5 10.2l3.5-3.4 3.5 3.4M8.5 13.8l3.5 3.4 3.5-3.4"/></svg></div>
+            <div><h3>Binance Pay</h3><small>تحويل مباشر من تطبيق Binance</small></div>
+          </div>
+          <div class="pay-value">
+            <span dir="ltr">952644140</span>
+            <button class="copy-btn" data-copy="952644140" type="button">نسخ</button>
+          </div>
+          <a class="btn btn-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%AD%D9%88%D9%84%D8%AA%20%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA%20%D8%B9%D9%86%20%D8%B7%D8%B1%D9%8A%D9%82%20Binance%20Pay%D8%8C%20%D9%88%D8%AF%D9%87%20%D8%A5%D8%AB%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D9%88%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%3A%20">أرسل إثبات الدفع واتساب</a>
+        </div>
+
+        <div class="pay-card">
+          <div class="pay-card-head">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" d="M8.5 10.2l3.5-3.4 3.5 3.4M8.5 13.8l3.5 3.4 3.5-3.4"/></svg></div>
+            <div><h3>USDT — TRC20</h3><small>شبكة Tron</small></div>
+          </div>
+          <div class="pay-value pay-value-long">
+            <span dir="ltr" class="addr">TAmENLouzbRjoGsUkupndguiqxaqF7zQPG</span>
+            <button class="copy-btn" data-copy="TAmENLouzbRjoGsUkupndguiqxaqF7zQPG" type="button">نسخ</button>
+          </div>
+          <a class="btn btn-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%AD%D9%88%D9%84%D8%AA%20%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA%20USDT%20TRC20%D8%8C%20%D9%88%D8%AF%D9%87%20%D8%A5%D8%AB%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D9%88%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%3A%20">أرسل إثبات الدفع واتساب</a>
+        </div>
+
+        <div class="pay-card">
+          <div class="pay-card-head">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-width="1.6"/><path stroke-width="1.6" stroke-linecap="round" d="M8.5 10.2l3.5-3.4 3.5 3.4M8.5 13.8l3.5 3.4 3.5-3.4"/></svg></div>
+            <div><h3>USDT — BEP20</h3><small>شبكة BNB Smart Chain</small></div>
+          </div>
+          <div class="pay-value pay-value-long">
+            <span dir="ltr" class="addr">0xeEd1026f026452563124aAB2b844B5499CfeC6d5</span>
+            <button class="copy-btn" data-copy="0xeEd1026f026452563124aAB2b844B5499CfeC6d5" type="button">نسخ</button>
+          </div>
+          <a class="btn btn-wa" target="_blank" href="https://wa.me/201033592674?text=%D8%A7%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%AD%D9%88%D9%84%D8%AA%20%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA%20USDT%20BEP20%D8%8C%20%D9%88%D8%AF%D9%87%20%D8%A5%D8%AB%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D9%88%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%3A%20">أرسل إثبات الدفع واتساب</a>
+        </div>
+      </div>
+      <p class="pay-warn">⚠️ اتأكد إنك بتحول على الشبكة الصح (TRC20 أو BEP20) حسب العنوان، أي تحويل على شبكة غلط ممكن يضيع.</p>
+    </div>
+  </div>
+
+  <div class="pay-steps">
+    <div class="pay-step"><span>1</span>اختار الخدمة وكلمنا واتساب لتأكيد السعر</div>
+    <div class="pay-step"><span>2</span>حوّل المبلغ بأي وسيلة من اللي فوق</div>
+    <div class="pay-step"><span>3</span>ابعت سكرين شوت التحويل على واتساب</div>
+    <div class="pay-step"><span>4</span>هننفذلك الخدمة فورًا بعد التأكيد</div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="contact-panel">
     <h2>محتاج استشارة قبل ما تطلب؟</h2>
@@ -330,20 +524,20 @@ const ICONS = {
 };
 
 const services = [
-  {icon:ICONS.shieldCheck, tag:"توثيق", title:"توثيق 3 منصات", desc:"توثيق بيدج فيسبوك، حساب انستجرام، وواتساب بزنس رسمي وموثق.", tags:["فيسبوك","انستجرام","واتساب بزنس"]},
-  {icon:ICONS.briefcase, tag:"بيزنس مانجر", title:"بيزنس مانجر شركات موثق شرعي", desc:"بيزنس مانجر شرعي موثق باسم شركة، جاهز واتساب API لحد 2000 رسالة يوميًا ومعتمد Tech Provider. متاح كمان توثيق بيزنس ببيانات شركة العميل نفسها.", tags:["Business Manager","WhatsApp API","توثيق شركات"]},
-  {icon:ICONS.play, tag:"تيك توك", title:"بيزنس أجينسي تيك توك موثق", desc:"حساب أجينسي تيك توك بيزنس شرعي وموثق، متاح استهداف كل الدول للحملات الإعلانية.", tags:["TikTok Business","استهداف عالمي"]},
-  {icon:ICONS.userCheck, tag:"حسابات فيسبوك", title:"حسابات فيسبوك قديمة راجعة القيد", desc:"حسابات قديمة تم رفع القيد عنها، مربوطة ببريد إلكتروني وهوية ومفعّل عليها المصادقة الثنائية.", tags:["راجع قيد","بريد + هوية","مصادقة"]},
-  {icon:ICONS.megaphone, tag:"حسابات فيسبوك", title:"حسابات فيسبوك موثقة لإعلانات السياسة والمجتمع", desc:"حسابات موثقة مؤهلة لتشغيل إعلانات فئة السياسة والقضايا الاجتماعية، مزودة ببريد وهوية ومصادقة.", tags:["Political Ads","بريد + هوية","مصادقة"]},
-  {icon:ICONS.chartUp, tag:"حسابات إعلانية", title:"حسابات إعلانية بحد صرف عالي (Limit)", desc:"حسابات إعلانية بحد صرف يومي 250 دولار، أو حسابات بصرف يومي مفتوح حسب احتياجك.", tags:["250$ يوميًا","صرف مفتوح"]},
-  {icon:ICONS.building, tag:"بيزنس مانجر", title:"بيزنس مانجر قديم راجع القيد", desc:"بيزنس مانجر قديم تم رفع القيد عنه، مستقر ويتحمل شغل واستهلاك لسنين طويلة.", tags:["راجع قيد","استقرار طويل"]},
-  {icon:ICONS.calendarClock, tag:"صفحات", title:"صفحات فيسبوك قديمة من 2020", desc:"صفحات فيسبوك ذات تاريخ إنشاء قديم يعود لعام 2020، مناسبة لبناء ثقة أسرع.", tags:["تاريخ 2020","صفحات أصلية"]},
-  {icon:ICONS.target, tag:"استهداف", title:"إعادة استهداف مراسلين الصفحة", desc:"استهداف الأشخاص اللي راسلوا صفحتك على فيسبوك أو انستجرام قبل كده بحملات إعادة تسويق.", tags:["Retargeting","فيسبوك","انستجرام"]},
-  {icon:ICONS.database, tag:"بيانات", title:"سحب داتا وأعضاء", desc:"سحب داتا أي بوست أو أعضاء جروبات فيسبوك، وكمان سحب داتا متابعين انستجرام.", tags:["داتا بوستات","أعضاء جروبات","متابعين انستجرام"]},
-  {icon:ICONS.key, tag:"اشتراكات", title:"اشتراكات رقمية (Gemini / Canva / ChatGPT)", desc:"اشتراك جيميناي برو لمدة 18 شهر، اشتراك كانفا برو لمدة 3 سنين، واشتراك شات جي بي تي.", tags:["Gemini Pro","Canva Pro","ChatGPT"]},
-  {icon:ICONS.thumbUp, tag:"تفاعل", title:"تزويد متابعين وتفاعل", desc:"تزويد متابعين فيسبوك وانستجرام، بالإضافة لعمل رياكشنز وتعليقات على منشوراتك.", tags:["متابعين فيسبوك","متابعين انستجرام","رياكشن وتعليقات"]},
-  {icon:ICONS.unlock, tag:"استرجاع", title:"استرجاع حسابات إعلانية وبيزنس مانجر", desc:"استرجاع الحسابات الإعلانية والبيزنس مانجر المعطلة أو المقيدة أو المقفولة بسبب مشاكل الدفعات.", tags:["حسابات معطلة","بيزنس مانجر مقفول","مشاكل دفع"]},
-  {icon:ICONS.camera, tag:"فتح حسابات", title:"فتح حسابات فيسبوك وانستجرام", desc:"فتح حسابات فيسبوك أو انستجرام المطلوب منها تأكيد بالسيلفي أو الفيديو.", tags:["طلب سيلفي","طلب فيديو"]},
+  {icon:ICONS.shieldCheck, tag:"توثيق", enLabel:"Verified", title:"توثيق 3 منصات", desc:"توثيق بيدج فيسبوك، حساب انستجرام، وواتساب بزنس رسمي وموثق.", tags:["Facebook Page","Instagram","WhatsApp Business"]},
+  {icon:ICONS.briefcase, tag:"بيزنس مانجر", enLabel:"Verified BM", title:"بيزنس مانجر شركات موثق شرعي", desc:"بيزنس مانجر شرعي موثق باسم شركة، جاهز واتساب API لحد 2000 رسالة يوميًا ومعتمد Tech Provider. متاح كمان توثيق بيزنس ببيانات شركة العميل نفسها.", tags:["Business Manager","WhatsApp API","Business Verification"]},
+  {icon:ICONS.play, tag:"تيك توك", enLabel:"TikTok Agency", title:"بيزنس أجينسي تيك توك موثق", desc:"حساب أجينسي تيك توك بيزنس شرعي وموثق، متاح استهداف كل الدول للحملات الإعلانية.", tags:["TikTok Business","Global Targeting"]},
+  {icon:ICONS.userCheck, tag:"حسابات فيسبوك", enLabel:"Aged Account", title:"حسابات فيسبوك قديمة راجعة القيد", desc:"حسابات قديمة تم رفع القيد عنها، مربوطة ببريد إلكتروني وهوية ومفعّل عليها المصادقة الثنائية.", tags:["Email + ID","2FA Verified"]},
+  {icon:ICONS.megaphone, tag:"حسابات فيسبوك", enLabel:"Political Ads", title:"حسابات فيسبوك موثقة لإعلانات السياسة والمجتمع", desc:"حسابات موثقة مؤهلة لتشغيل إعلانات فئة السياسة والقضايا الاجتماعية، مزودة ببريد وهوية ومصادقة.", tags:["Email + ID","2FA Verified"]},
+  {icon:ICONS.chartUp, tag:"حسابات إعلانية", enLabel:"High Limit", title:"حسابات إعلانية بحد صرف عالي", desc:"حسابات إعلانية بحد صرف يومي 250 دولار، أو حسابات بصرف يومي مفتوح حسب احتياجك.", tags:["250$ Daily","Unlimited Spend"]},
+  {icon:ICONS.building, tag:"بيزنس مانجر", enLabel:"Aged BM", title:"بيزنس مانجر قديم راجع القيد", desc:"بيزنس مانجر قديم تم رفع القيد عنه، مستقر ويتحمل شغل واستهلاك لسنين طويلة.", tags:["Long-Term Stability"]},
+  {icon:ICONS.calendarClock, tag:"صفحات", enLabel:"Since 2020", title:"صفحات فيسبوك قديمة من 2020", desc:"صفحات فيسبوك ذات تاريخ إنشاء قديم يعود لعام 2020، مناسبة لبناء ثقة أسرع.", tags:["Original Pages"]},
+  {icon:ICONS.target, tag:"استهداف", enLabel:"Retargeting", title:"إعادة استهداف مراسلين الصفحة", desc:"استهداف الأشخاص اللي راسلوا صفحتك على فيسبوك أو انستجرام قبل كده بحملات إعادة تسويق.", tags:["Facebook","Instagram"]},
+  {icon:ICONS.database, tag:"بيانات", enLabel:"Data Export", title:"سحب داتا وأعضاء", desc:"سحب داتا أي بوست أو أعضاء جروبات فيسبوك، وكمان سحب داتا متابعين انستجرام.", tags:["Group Members","Followers Export"]},
+  {icon:ICONS.key, tag:"اشتراكات", enLabel:"Subscriptions", title:"اشتراكات رقمية (Gemini / Canva / ChatGPT)", desc:"اشتراك جيميناي برو لمدة 18 شهر، اشتراك كانفا برو لمدة 3 سنين، واشتراك شات جي بي تي.", tags:["Gemini Pro","Canva Pro","ChatGPT Plus"]},
+  {icon:ICONS.thumbUp, tag:"تفاعل", enLabel:"Engagement", title:"تزويد متابعين وتفاعل", desc:"تزويد متابعين فيسبوك وانستجرام، بالإضافة لعمل رياكشنز وتعليقات على منشوراتك.", tags:["Followers Growth","Reactions & Comments"]},
+  {icon:ICONS.unlock, tag:"استرجاع", enLabel:"Recovery", title:"استرجاع حسابات إعلانية وبيزنس مانجر", desc:"استرجاع الحسابات الإعلانية والبيزنس مانجر المعطلة أو المقيدة أو المقفولة بسبب مشاكل الدفعات.", tags:["Disabled Accounts","Restricted BM"]},
+  {icon:ICONS.camera, tag:"فتح حسابات", enLabel:"ID Confirmation", title:"فتح حسابات فيسبوك وانستجرام", desc:"فتح حسابات فيسبوك أو انستجرام المطلوب منها تأكيد بالسيلفي أو الفيديو.", tags:["Selfie Verification","Video Verification"]},
 ];
 
 const grid = document.getElementById('grid');
@@ -354,22 +548,29 @@ function waLink(title){
   return `https://wa.me/201033592674?text=${text}`;
 }
 
+function isEnglish(str){
+  return /^[A-Za-z0-9]/.test(str);
+}
+
 function render(list){
   grid.innerHTML = '';
   list.forEach((s, i) => {
     const card = document.createElement('div');
     card.className = 'card';
-    card.dataset.search = (s.title + ' ' + s.desc + ' ' + s.tag + ' ' + s.tags.join(' ')).toLowerCase();
+    card.dataset.search = (s.title + ' ' + s.desc + ' ' + s.tag + ' ' + (s.enLabel||'') + ' ' + s.tags.join(' ')).toLowerCase();
     card.innerHTML = `
       <div class="card-top">
         <div class="icon-wrap">${s.icon}</div>
-        <div class="num">${s.tag}</div>
+        <div class="card-top-meta">
+          <div class="num">${s.tag}</div>
+          ${s.enLabel ? `<span class="en-label" dir="ltr">${s.enLabel}</span>` : ''}
+        </div>
       </div>
       <div>
         <h3>${s.title}</h3>
         <p>${s.desc}</p>
       </div>
-      <div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div class="tags">${s.tags.map(t=>`<span class="tag${isEnglish(t) ? ' tag-en' : ''}" ${isEnglish(t) ? 'dir="ltr"' : ''}>${t}</span>`).join('')}</div>
       <div class="card-actions">
         <a class="btn btn-wa" target="_blank" href="${waLink(s.title)}">طلب الخدمة</a>
         <a class="btn btn-call" href="tel:+201033592674">اتصال</a>
@@ -384,10 +585,40 @@ render(services);
 document.getElementById('searchInput').addEventListener('input', (e) => {
   const q = e.target.value.trim().toLowerCase();
   const filtered = services.filter(s =>
-    (s.title + ' ' + s.desc + ' ' + s.tag + ' ' + s.tags.join(' ')).toLowerCase().includes(q)
+    (s.title + ' ' + s.desc + ' ' + s.tag + ' ' + (s.enLabel||'') + ' ' + s.tags.join(' ')).toLowerCase().includes(q)
   );
   render(filtered);
   noResults.style.display = filtered.length ? 'none' : 'block';
+});
+
+// payment tabs
+document.querySelectorAll('.pay-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.target).classList.add('active');
+  });
+});
+
+// copy to clipboard
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const value = btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = value;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    const original = btn.textContent;
+    btn.textContent = 'تم النسخ ✓';
+    setTimeout(() => { btn.textContent = original; }, 1800);
+  });
 });
 </script>
 
